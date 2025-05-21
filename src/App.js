@@ -1,25 +1,83 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const [FlowerPokaz, setFlowerPokaz] = useState(true);
+  const [AnimalPokaz, setAnimalPokaz] = useState(true);
+  const [CarPokaz, setCarPokaz] = useState(true);
+
+  const [FlowerDowloand, setFlowerDowloand] = useState(0);
+  const [AnimalDowloand, setAnimalDowloand] = useState(0);
+  const [CarDowloand, setCarDowloand] = useState(0);
+
+  function FlowerDowloandChange(){
+      setFlowerDowloand(FlowerDowloand+1);
+  }
+    function AnimalDowloandChange(){
+        setAnimalDowloand(AnimalDowloand+1);
+    }
+    function CarDowloandChange(){
+        setCarDowloand(CarDowloand+1);
+    }
+  return(
+      <div>
+     <h1>Prosta Galeria</h1>
+
+          <div>
+              <label>
+                  <input type="checkbox" checked={!FlowerPokaz} onChange={() => setFlowerPokaz(!FlowerPokaz)}/>
+              </label>
+              <label>
+                  <input type="checkbox" checked={!AnimalPokaz} onChange={() => setAnimalPokaz(!AnimalPokaz)}/>
+              </label>
+              <label>
+                  <input type="checkbox" checked={!CarPokaz} onChange={() => setCarPokaz(!CarPokaz)}/>
+              </label>
+          </div>
+
+
+              {FlowerPokaz && (
+                  <div>
+                      <h2>Kwiaty</h2>
+                      <img src='./public/zdjecia/obraz1.jpg'/>
+                      <img src='./public/zdjecia/obraz8.jpg'/>
+                      <img src='./public/zdjecia/obraz2.jpg'/>
+                    <button onClick={() => FlowerDowloandChange() }>Pobierz</button>
+                     <p>Liczba pobrań: {FlowerDowloand}</p>
+
+                  </div>
+              )}
+          {AnimalPokaz && (
+              <div>
+                  <h2>Kwiaty</h2>
+                  <img src='./public/zdjecia/obraz3.jpg'/>
+                  <img src='./public/zdjecia/obraz4.jpg'/>
+                  <img src='./public/zdjecia/obraz5.jpg'/>
+                  <img src='./public/zdjecia/obraz7.jpg'/>
+                  <img src='./public/zdjecia/obraz9.jpg'/>
+                  <img src='./public/zdjecia/obraz11.jpg'/>
+                  <img src='./public/zdjecia/obraz10.jpg'/>
+                  <button onClick={() => AnimalDowloandChange()}>Pobierz</button>
+                  <p>Liczba pobrań: {AnimalDowloand}</p>
+
+              </div>
+          )}
+          {CarPokaz && (
+              <div>
+                  <h2>Kwiaty</h2>
+
+                  <img src='./public/zdjecia/obraz12.jpg'/>
+                  <img src='./public/zdjecia/obraz6.jpg'/>
+                  <button onClick={() => CarDowloandChange() }>Pobierz</button>
+                  <p>Liczba pobrań: {CarDowloand}</p>
+
+              </div>
+          )}
+
+
+      </div>
   );
+
 }
 
 export default App;
