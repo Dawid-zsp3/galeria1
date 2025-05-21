@@ -55,7 +55,7 @@ function App() {
             )}
             {AnimalPokaz && (
                 <div>
-                    <h2>Kwiaty</h2>
+                    <h2>Zwierzęta</h2>
                     <img src="/zdjecia/obraz3.jpg"/>
                     <img src="/zdjecia/obraz4.jpg"/>
                     <img src="/zdjecia/obraz5.jpg"/>
@@ -69,7 +69,7 @@ function App() {
                 </div>)}
             {CarPokaz && (
                 <div>
-                    <h2>Kwiaty</h2>
+                    <h2>Samochody</h2>
 
                     <img src="/zdjecia/obraz12.jpg"/>
                     <img src="/zdjecia/obraz6.jpg"/>
